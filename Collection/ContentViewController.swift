@@ -1,18 +1,19 @@
 //
-//  CollectionViewController.swift
+//  ContentViewController.swift
 //  Collection
 //
-//  Created by Andrey Krivokhizhin on 07.04.2022.
+//  Created by Andrey Krivokhizhin on 09.04.2022.
 //
 
 import UIKit
 
-class CollectionViewController: UIViewController {
+class ContentViewController: UIViewController {
     
     var collectionView: UICollectionView!
     let cellId = "cell"
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
@@ -24,6 +25,7 @@ class CollectionViewController: UIViewController {
     }
     
     private func setupConstraints() {
+        
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(collectionView)
         
@@ -36,36 +38,29 @@ class CollectionViewController: UIViewController {
     }
 }
 
-extension CollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        1
-    }
+extension ContentViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1000
+        2
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
         cell.backgroundColor = .white
         cell.layer.cornerRadius = 3
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let contentVC = ContentViewController()
-//        contentVC.modalPresentationStyle = .overFullScreen
-        
-        present(contentVC, animated: true, completion: nil)
-    }
 }
 
-extension CollectionViewController: UICollectionViewDelegateFlowLayout {
+extension ContentViewController: UICollectionViewDelegateFlowLayout {
     var edgeInsert: CGFloat {
         return 20
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemsPerRow: CGFloat = 2
+        let itemsPerRow: CGFloat = 1
         let paddingWidth = edgeInsert * 2 + 20 * (itemsPerRow - 1)
         let itemWidth = (collectionView.frame.width - paddingWidth) / itemsPerRow
-        return CGSize(width: itemWidth, height: itemWidth * 1.23)
+        return CGSize(width: itemWidth, height: itemWidth * 1.9)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -73,6 +68,6 @@ extension CollectionViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        20
+        30
     }
 }

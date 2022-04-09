@@ -13,6 +13,7 @@
 		7FE1FC8E27FF135300FFB59A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1FC8C27FF135300FFB59A /* Main.storyboard */; };
 		7FE1FC9027FF135600FFB59A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1FC8F27FF135600FFB59A /* Assets.xcassets */; };
 		7FE1FC9327FF135600FFB59A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1FC9127FF135600FFB59A /* LaunchScreen.storyboard */; };
+		7FE1FC9B2801951900FFB59A /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE1FC9A2801951900FFB59A /* ContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7FE1FC8F27FF135600FFB59A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FE1FC9227FF135600FFB59A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FE1FC9427FF135600FFB59A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FE1FC9A2801951900FFB59A /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				7FE1FC8627FF135300FFB59A /* AppDelegate.swift */,
 				7FE1FC8827FF135300FFB59A /* SceneDelegate.swift */,
 				7FE1FC8A27FF135300FFB59A /* CollectionViewController.swift */,
+				7FE1FC9A2801951900FFB59A /* ContentViewController.swift */,
 				7FE1FC8C27FF135300FFB59A /* Main.storyboard */,
 				7FE1FC8F27FF135600FFB59A /* Assets.xcassets */,
 				7FE1FC9127FF135600FFB59A /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FE1FC9B2801951900FFB59A /* ContentViewController.swift in Sources */,
 				7FE1FC8B27FF135300FFB59A /* CollectionViewController.swift in Sources */,
 				7FE1FC8727FF135300FFB59A /* AppDelegate.swift in Sources */,
 				7FE1FC8927FF135300FFB59A /* SceneDelegate.swift in Sources */,

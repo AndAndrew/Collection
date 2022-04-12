@@ -33,6 +33,19 @@ class CollectionCell: UICollectionViewCell {
         return cCellTitleLabel
     }()
     
+    let contentTypeLabel: UILabel = {
+        let cCellTypeLabel = UILabel()
+        
+        cCellTypeLabel.font = UIFont(name: "Rockwell", size: 14)
+        cCellTypeLabel.textColor = UIColor(red: 182 / 255, green: 182 / 255, blue: 182 / 255, alpha: 1)
+        cCellTypeLabel.textAlignment = .left
+        cCellTypeLabel.adjustsFontSizeToFitWidth = true
+        cCellTypeLabel.minimumScaleFactor = 0.5
+        cCellTypeLabel.numberOfLines = 1
+        
+        return cCellTypeLabel
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
@@ -61,8 +74,18 @@ class CollectionCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: 10),
             titleLabel.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -10),
-            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -24),
-            titleLabel.heightAnchor.constraint(equalToConstant: 21)
+            titleLabel.heightAnchor.constraint(equalToConstant: 20)
+        ])
+        
+        contentTypeLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(contentTypeLabel)
+        
+        NSLayoutConstraint.activate([
+            contentTypeLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
+            contentTypeLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: 10),
+            contentTypeLabel.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -10),
+            contentTypeLabel.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -13),
+            contentTypeLabel.heightAnchor.constraint(equalToConstant: 15)
         ])
     }
     

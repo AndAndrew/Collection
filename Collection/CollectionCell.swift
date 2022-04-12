@@ -20,6 +20,19 @@ class CollectionCell: UICollectionViewCell {
         return cCellImage
     }()
     
+    let titleLabel: UILabel = {
+        let cCellTitleLabel = UILabel()
+        
+        cCellTitleLabel.font = UIFont(name: "Rockwell", size: 18)
+        cCellTitleLabel.adjustsFontSizeToFitWidth = true
+        cCellTitleLabel.minimumScaleFactor = 0.5
+        cCellTitleLabel.textAlignment = .left
+        cCellTitleLabel.numberOfLines = 1
+        cCellTitleLabel.textColor = .white
+        
+        return cCellTitleLabel
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
@@ -40,6 +53,16 @@ class CollectionCell: UICollectionViewCell {
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
+        ])
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(titleLabel)
+        
+        NSLayoutConstraint.activate([
+            titleLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: 10),
+            titleLabel.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -10),
+            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -24),
+            titleLabel.heightAnchor.constraint(equalToConstant: 21)
         ])
     }
     

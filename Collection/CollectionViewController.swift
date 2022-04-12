@@ -15,10 +15,9 @@ class CollectionViewController: UIViewController {
     override func viewDidLoad() {
         
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: UICollectionViewFlowLayout())
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(CollectionCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.backgroundColor = .lightGray
         
         setupConstraints()
     }
@@ -44,9 +43,7 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
         return 1000
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = .white
-        cell.layer.cornerRadius = 3
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CollectionCell
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

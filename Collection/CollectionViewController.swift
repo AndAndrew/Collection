@@ -51,9 +51,7 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let contentVC = ContentViewController()
-//        contentVC.modalPresentationStyle = .overFullScreen
-        
-        present(contentVC, animated: true, completion: nil)
+        navigationController?.pushViewController(contentVC, animated: true)
     }
 }
 

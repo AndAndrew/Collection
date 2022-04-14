@@ -10,12 +10,16 @@ import UIKit
 class ContentViewController: UIViewController {
     
     var collectionView: UICollectionView!
+    let headerCellId = "headerCell"
     let cellId = "cell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .darkGray
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.backgroundColor = .clear
+        collectionView.register(HeaderContentVCCell.self, forCellWithReuseIdentifier: headerCellId)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -44,10 +48,17 @@ extension ContentViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = .lightGray
-        cell.layer.cornerRadius = 3
-        return cell
+        if indexPath.item == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: headerCellId, for: indexPath) as! HeaderContentVCCell
+            cell.imageView.image = UIImage(named: "earth")
+            cell.layer.cornerRadius = 3
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+            cell.backgroundColor = .lightGray
+            cell.layer.cornerRadius = 3
+            return cell
+        }
     }
 }
 

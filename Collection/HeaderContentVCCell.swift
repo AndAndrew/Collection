@@ -34,6 +34,14 @@ class HeaderContentVCCell: UICollectionViewCell {
         return typeLabel
     }()
     
+    let lineView: UIView = {
+        let line = UIView()
+        
+        line.backgroundColor = .white
+        
+        return line
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
@@ -63,6 +71,16 @@ class HeaderContentVCCell: UICollectionViewCell {
             contentTypeLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -20),
             contentTypeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 116),
             contentTypeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -116)
+        ])
+        
+        lineView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(lineView)
+        
+        NSLayoutConstraint.activate([
+            lineView.topAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -1),
+            lineView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 100),
+            lineView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -100),
+            lineView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
     

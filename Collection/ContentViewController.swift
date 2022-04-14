@@ -71,7 +71,7 @@ extension ContentViewController: UICollectionViewDelegateFlowLayout {
         let itemsPerRow: CGFloat = 1
         let paddingWidth = edgeInsert * 2 + 20 * (itemsPerRow - 1)
         let itemWidth = (collectionView.frame.width - paddingWidth) / itemsPerRow
-        return CGSize(width: itemWidth, height: itemWidth * 1.9)
+        return CGSize(width: itemWidth, height: itemWidth * 1.7)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

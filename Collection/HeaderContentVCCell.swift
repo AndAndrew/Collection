@@ -20,6 +20,20 @@ class HeaderContentVCCell: UICollectionViewCell {
         return hCellImage
     }()
     
+    let contentTypeLabel: UILabel = {
+        let typeLabel = UILabel()
+        
+        typeLabel.layer.borderWidth = 1
+        typeLabel.layer.cornerRadius = 8
+        typeLabel.font = UIFont(name: "Rockwell", size: 24)
+        typeLabel.layer.borderColor = UIColor.white.cgColor
+        typeLabel.textColor = .white
+        typeLabel.textAlignment = .center
+        typeLabel.backgroundColor = .black
+        typeLabel.clipsToBounds = true
+        return typeLabel
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
@@ -39,6 +53,16 @@ class HeaderContentVCCell: UICollectionViewCell {
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             imageView.heightAnchor.constraint(equalToConstant: 500)
+        ])
+        
+        contentTypeLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(contentTypeLabel)
+        
+        NSLayoutConstraint.activate([
+            contentTypeLabel.heightAnchor.constraint(equalToConstant: 40),
+            contentTypeLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -20),
+            contentTypeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 116),
+            contentTypeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -116)
         ])
     }
     

@@ -51,6 +51,7 @@ extension ContentViewController: UICollectionViewDelegate, UICollectionViewDataS
         if indexPath.item == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: headerCellId, for: indexPath) as! HeaderContentVCCell
             cell.imageView.image = UIImage(named: "earth")
+            cell.contentTypeLabel.text = "Type"
             cell.layer.cornerRadius = 3
             return cell
         } else {

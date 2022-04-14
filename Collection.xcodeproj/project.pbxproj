@@ -15,6 +15,7 @@
 		7FE1FC9327FF135600FFB59A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1FC9127FF135600FFB59A /* LaunchScreen.storyboard */; };
 		7FE1FC9B2801951900FFB59A /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE1FC9A2801951900FFB59A /* ContentViewController.swift */; };
 		7FE1FC9D2805A3A800FFB59A /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE1FC9C2805A3A800FFB59A /* CollectionCell.swift */; };
+		7FE1FC9F280809B900FFB59A /* GradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE1FC9E280809B900FFB59A /* GradientImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		7FE1FC9427FF135600FFB59A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FE1FC9A2801951900FFB59A /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		7FE1FC9C2805A3A800FFB59A /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		7FE1FC9E280809B900FFB59A /* GradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				7FE1FC8A27FF135300FFB59A /* CollectionViewController.swift */,
 				7FE1FC9A2801951900FFB59A /* ContentViewController.swift */,
 				7FE1FC9C2805A3A800FFB59A /* CollectionCell.swift */,
+				7FE1FC9E280809B900FFB59A /* GradientImageView.swift */,
 				7FE1FC8C27FF135300FFB59A /* Main.storyboard */,
 				7FE1FC8F27FF135600FFB59A /* Assets.xcassets */,
 				7FE1FC9127FF135600FFB59A /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 				7FE1FC8727FF135300FFB59A /* AppDelegate.swift in Sources */,
 				7FE1FC8927FF135300FFB59A /* SceneDelegate.swift in Sources */,
 				7FE1FC9D2805A3A800FFB59A /* CollectionCell.swift in Sources */,
+				7FE1FC9F280809B900FFB59A /* GradientImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

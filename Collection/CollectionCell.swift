@@ -9,8 +9,8 @@ import UIKit
 
 class CollectionCell: UICollectionViewCell {
     
-    let imageView : UIImageView = {
-        let cCellImage = UIImageView()
+    let imageView : GradientImageView = {
+        let cCellImage = GradientImageView()
         
         cCellImage.contentMode = .scaleAspectFill
         cCellImage.clipsToBounds = true

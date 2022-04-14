@@ -19,7 +19,6 @@ class ContentViewController: UIViewController {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.backgroundColor = .lightGray
         
         setupConstraints()
     }
@@ -46,7 +45,7 @@ extension ContentViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = .white
+        cell.backgroundColor = .lightGray
         cell.layer.cornerRadius = 3
         return cell
     }

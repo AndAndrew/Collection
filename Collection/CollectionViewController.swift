@@ -46,6 +46,7 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CollectionCell
         cell.titleLabel.text = "Title"
         cell.contentTypeLabel.text = "Type"
+        cell.imageView.image = UIImage(named: "earth")
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

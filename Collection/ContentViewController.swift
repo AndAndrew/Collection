@@ -11,6 +11,7 @@ class ContentViewController: UIViewController {
     
     var collectionView: UICollectionView!
     let headerCellId = "headerCell"
+    let storyCellId = "storyCell"
     let cellId = "cell"
     
     override func viewDidLoad() {
@@ -20,6 +21,7 @@ class ContentViewController: UIViewController {
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.backgroundColor = .clear
         collectionView.register(HeaderContentVCCell.self, forCellWithReuseIdentifier: headerCellId)
+        collectionView.register(StoryContentVCCell.self, forCellWithReuseIdentifier: storyCellId)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -44,7 +46,7 @@ class ContentViewController: UIViewController {
 extension ContentViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        2
+        10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -55,10 +57,18 @@ extension ContentViewController: UICollectionViewDelegate, UICollectionViewDataS
             cell.layer.cornerRadius = 3
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-            cell.backgroundColor = .lightGray
-            cell.layer.cornerRadius = 3
-            return cell
+            switch indexPath.item % 2 != 0 {
+            case true:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: storyCellId, for: indexPath) as! StoryContentVCCell
+                cell.backgroundColor = .gray
+                cell.layer.cornerRadius = 3
+                return cell
+            case false:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+                cell.backgroundColor = .lightGray
+                cell.layer.cornerRadius = 3
+                return cell
+            }
         }
     }
 }

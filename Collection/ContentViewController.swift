@@ -12,7 +12,7 @@ class ContentViewController: UIViewController {
     var collectionView: UICollectionView!
     let headerCellId = "headerCell"
     let storyCellId = "storyCell"
-    let cellId = "cell"
+    let galleryCellId = "galleryCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class ContentViewController: UIViewController {
         collectionView.backgroundColor = .clear
         collectionView.register(HeaderContentVCCell.self, forCellWithReuseIdentifier: headerCellId)
         collectionView.register(StoryContentVCCell.self, forCellWithReuseIdentifier: storyCellId)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(GalleryContentVCCell.self, forCellWithReuseIdentifier: galleryCellId)
         collectionView.dataSource = self
         collectionView.delegate = self
         
@@ -59,15 +59,15 @@ extension ContentViewController: UICollectionViewDelegate, UICollectionViewDataS
         } else {
             switch indexPath.item % 2 != 0 {
             case true:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: storyCellId, for: indexPath) as! StoryContentVCCell
-                cell.backgroundColor = .gray
-                cell.layer.cornerRadius = 3
-                return cell
+                let storyCell = collectionView.dequeueReusableCell(withReuseIdentifier: storyCellId, for: indexPath) as! StoryContentVCCell
+                storyCell.backgroundColor = .gray
+                storyCell.layer.cornerRadius = 3
+                return storyCell
             case false:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-                cell.backgroundColor = .lightGray
-                cell.layer.cornerRadius = 3
-                return cell
+                let galleryCell = collectionView.dequeueReusableCell(withReuseIdentifier: galleryCellId, for: indexPath) as! GalleryContentVCCell
+                galleryCell.galleryImageView.image = UIImage(named: "earth")
+                galleryCell.layer.cornerRadius = 3
+                return galleryCell
             }
         }
     }

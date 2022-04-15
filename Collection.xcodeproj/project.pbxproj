@@ -18,6 +18,7 @@
 		7FE1FC9F280809B900FFB59A /* GradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE1FC9E280809B900FFB59A /* GradientImageView.swift */; };
 		7FE1FCA128081B2C00FFB59A /* HeaderContentVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE1FCA028081B2C00FFB59A /* HeaderContentVCCell.swift */; };
 		7FE1FCA328094EA600FFB59A /* StoryContentVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE1FCA228094EA500FFB59A /* StoryContentVCCell.swift */; };
+		7FE1FCA7280953D900FFB59A /* GalleryContentVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE1FCA6280953D900FFB59A /* GalleryContentVCCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		7FE1FC9E280809B900FFB59A /* GradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientImageView.swift; sourceTree = "<group>"; };
 		7FE1FCA028081B2C00FFB59A /* HeaderContentVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderContentVCCell.swift; sourceTree = "<group>"; };
 		7FE1FCA228094EA500FFB59A /* StoryContentVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryContentVCCell.swift; sourceTree = "<group>"; };
+		7FE1FCA6280953D900FFB59A /* GalleryContentVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryContentVCCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				7FE1FC9C2805A3A800FFB59A /* CollectionCell.swift */,
 				7FE1FCA028081B2C00FFB59A /* HeaderContentVCCell.swift */,
 				7FE1FCA228094EA500FFB59A /* StoryContentVCCell.swift */,
+				7FE1FCA6280953D900FFB59A /* GalleryContentVCCell.swift */,
 				7FE1FC9E280809B900FFB59A /* GradientImageView.swift */,
 				7FE1FC8C27FF135300FFB59A /* Main.storyboard */,
 				7FE1FC8F27FF135600FFB59A /* Assets.xcassets */,
@@ -159,6 +162,7 @@
 				7FE1FCA328094EA600FFB59A /* StoryContentVCCell.swift in Sources */,
 				7FE1FC8927FF135300FFB59A /* SceneDelegate.swift in Sources */,
 				7FE1FC9D2805A3A800FFB59A /* CollectionCell.swift in Sources */,
+				7FE1FCA7280953D900FFB59A /* GalleryContentVCCell.swift in Sources */,
 				7FE1FCA128081B2C00FFB59A /* HeaderContentVCCell.swift in Sources */,
 				7FE1FC9F280809B900FFB59A /* GradientImageView.swift in Sources */,
 			);

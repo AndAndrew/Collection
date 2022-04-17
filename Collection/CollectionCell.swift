@@ -15,7 +15,6 @@ class CollectionCell: UICollectionViewCell {
         cCellImage.contentMode = .scaleAspectFill
         cCellImage.clipsToBounds = true
         cCellImage.layer.cornerRadius = 9
-        cCellImage.backgroundColor = .gray
         
         return cCellImage
     }()

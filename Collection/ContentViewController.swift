@@ -13,11 +13,12 @@ class ContentViewController: UIViewController {
     let headerCellId = "headerCell"
     let storyCellId = "storyCell"
     let galleryCellId = "galleryCell"
+    var data: ContentType!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .darkGray
+        view.backgroundColor = .black
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.backgroundColor = .clear
         collectionView.register(HeaderContentVCCell.self, forCellWithReuseIdentifier: headerCellId)
@@ -46,27 +47,37 @@ class ContentViewController: UIViewController {
 extension ContentViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        switch data {
+        case .story(_):
+            return 2
+        case .gallery(let gallery):
+            return gallery.images.count + 1
+        case .none:
+            return 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let data = data else { return UICollectionViewCell() }
         if indexPath.item == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: headerCellId, for: indexPath) as! HeaderContentVCCell
-            cell.imageView.image = UIImage(named: "earth")
-            cell.contentTypeLabel.text = "Type"
-            cell.layer.cornerRadius = 3
+            switch data {
+            case .story(let story):
+                cell.imageView.image = story.coverImage
+                cell.contentTypeLabel.text = story.type
+            case .gallery(let gallery):
+                cell.imageView.image = gallery.coverImage
+                cell.contentTypeLabel.text = gallery.type
+            }
             return cell
         } else {
-            switch indexPath.item % 2 != 0 {
-            case true:
+            switch data {
+            case .story(let story):
                 let storyCell = collectionView.dequeueReusableCell(withReuseIdentifier: storyCellId, for: indexPath) as! StoryContentVCCell
-                storyCell.backgroundColor = .gray
-                storyCell.layer.cornerRadius = 3
                 return storyCell
-            case false:
+            case .gallery(let gallery):
                 let galleryCell = collectionView.dequeueReusableCell(withReuseIdentifier: galleryCellId, for: indexPath) as! GalleryContentVCCell
-                galleryCell.galleryImageView.image = UIImage(named: "earth")
-                galleryCell.layer.cornerRadius = 3
+                galleryCell.galleryImageView.image = gallery.images[indexPath.item]
                 return galleryCell
             }
         }

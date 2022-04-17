@@ -11,6 +11,7 @@ class CollectionViewController: UIViewController {
     
     var collectionView: UICollectionView!
     let cellId = "cell"
+    let data = Data.data
     
     override func viewDidLoad() {
         
@@ -40,17 +41,28 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
         1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1000
+        return data.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CollectionCell
-        cell.titleLabel.text = "Title"
-        cell.contentTypeLabel.text = "Type"
-        cell.imageView.image = UIImage(named: "earth")
+        
+        switch data[indexPath.item] {
+        case .story(let story):
+            let image = story.coverImage
+            cell.imageView.image = image
+            cell.titleLabel.text = story.title
+            cell.contentTypeLabel.text = story.type
+        case .gallery(let gallery):
+            let image = gallery.coverImage
+            cell.imageView.image = image
+            cell.titleLabel.text = gallery.title
+            cell.contentTypeLabel.text = gallery.type
+        }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let contentVC = ContentViewController()
+        contentVC.data = data[indexPath.item]
         navigationController?.pushViewController(contentVC, animated: true)
     }
 }

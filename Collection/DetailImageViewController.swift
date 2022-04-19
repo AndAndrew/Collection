@@ -9,7 +9,7 @@ import UIKit
 
 class DetailImageViewController: UIViewController {
     
-    let scrollView = UIScrollView()
+    let scrollView = DetailImageScrollView()
 
     override func viewDidLoad() {
         super.viewDidLoad()

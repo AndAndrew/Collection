@@ -18,6 +18,15 @@ class StoryContentVCCell: UICollectionViewCell {
         return backgroundView
     }()
     
+    let textLabel: UILabel = {
+        let text = UILabel()
+        text.textColor = .white
+        text.font = UIFont(name: "Rockwell", size: 24)
+        text.numberOfLines = 0
+        text.lineBreakMode = .byWordWrapping
+        return text
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
@@ -34,6 +43,16 @@ class StoryContentVCCell: UICollectionViewCell {
             backgroundTextView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             backgroundTextView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             backgroundTextView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
+        
+        textLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(textLabel)
+        
+        NSLayoutConstraint.activate([
+            textLabel.topAnchor.constraint(equalTo: backgroundTextView.topAnchor, constant: 20),
+            textLabel.leadingAnchor.constraint(equalTo: backgroundTextView.leadingAnchor, constant: 20),
+            textLabel.trailingAnchor.constraint(equalTo: backgroundTextView.trailingAnchor, constant: -20),
+            textLabel.bottomAnchor.constraint(equalTo: backgroundTextView.bottomAnchor, constant: -20)
         ])
     }
     

@@ -74,10 +74,11 @@ extension ContentViewController: UICollectionViewDelegate, UICollectionViewDataS
             switch data {
             case .story(let story):
                 let storyCell = collectionView.dequeueReusableCell(withReuseIdentifier: storyCellId, for: indexPath) as! StoryContentVCCell
+                storyCell.textLabel.text = story.text
                 return storyCell
             case .gallery(let gallery):
                 let galleryCell = collectionView.dequeueReusableCell(withReuseIdentifier: galleryCellId, for: indexPath) as! GalleryContentVCCell
-                galleryCell.galleryImageView.image = gallery.images[indexPath.item]
+                galleryCell.galleryImageView.image = gallery.images[indexPath.item - 1]
                 return galleryCell
             }
         }
@@ -92,7 +93,16 @@ extension ContentViewController: UICollectionViewDelegateFlowLayout {
         let itemsPerRow: CGFloat = 1
         let paddingWidth = edgeInsert * 2 + 20 * (itemsPerRow - 1)
         let itemWidth = (collectionView.frame.width - paddingWidth) / itemsPerRow
-        return CGSize(width: itemWidth, height: itemWidth * 1.7)
+        if indexPath.item == 0 {
+            return CGSize(width: itemWidth, height: itemWidth * 1.7)
+        } else {
+            switch data {
+            case .gallery(_), .none:
+                return CGSize(width: itemWidth, height: itemWidth * 1.7)
+            case .story(_):
+                return CGSize(width: itemWidth, height: itemWidth * 4.9)
+            }
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

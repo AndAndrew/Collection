@@ -83,6 +83,10 @@ extension ContentViewController: UICollectionViewDelegate, UICollectionViewDataS
             }
         }
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailImageVC = DetailImageViewController()
+        navigationController?.pushViewController(detailImageVC, animated: true)
+    }
 }
 
 extension ContentViewController: UICollectionViewDelegateFlowLayout {

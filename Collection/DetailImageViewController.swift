@@ -25,10 +25,10 @@ class DetailImageViewController: UIViewController {
         view.addSubview(scrollView)
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 172),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -172)
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 }

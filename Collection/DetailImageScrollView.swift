@@ -28,6 +28,7 @@ class DetailImageScrollView: UIScrollView {
         super.layoutSubviews()
         
         centerImage()
+        
         if firstTime {
             setCurrentZoomScale()
         }

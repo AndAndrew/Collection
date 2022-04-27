@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		7FBB597F280ED7F700004410 /* DetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBB597E280ED7F700004410 /* DetailImageViewController.swift */; };
 		7FBB5981280ED9B000004410 /* DetailImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBB5980280ED9B000004410 /* DetailImageScrollView.swift */; };
+		7FBB59822818232700004410 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1FC8F27FF135600FFB59A /* Assets.xcassets */; };
 		7FE1FC8727FF135300FFB59A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE1FC8627FF135300FFB59A /* AppDelegate.swift */; };
 		7FE1FC8927FF135300FFB59A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE1FC8827FF135300FFB59A /* SceneDelegate.swift */; };
 		7FE1FC8B27FF135300FFB59A /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE1FC8A27FF135300FFB59A /* CollectionViewController.swift */; };
 		7FE1FC8E27FF135300FFB59A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1FC8C27FF135300FFB59A /* Main.storyboard */; };
-		7FE1FC9027FF135600FFB59A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1FC8F27FF135600FFB59A /* Assets.xcassets */; };
 		7FE1FC9327FF135600FFB59A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1FC9127FF135600FFB59A /* LaunchScreen.storyboard */; };
 		7FE1FC9B2801951900FFB59A /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE1FC9A2801951900FFB59A /* ContentViewController.swift */; };
 		7FE1FC9D2805A3A800FFB59A /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE1FC9C2805A3A800FFB59A /* CollectionCell.swift */; };
@@ -226,10 +226,10 @@
 			files = (
 				7FE1FCD2280BDF6A00FFB59A /* s3-text.txt in Resources */,
 				7FE1FC9327FF135600FFB59A /* LaunchScreen.storyboard in Resources */,
+				7FBB59822818232700004410 /* Assets.xcassets in Resources */,
 				7FE1FCC3280A8E7200FFB59A /* s1-title.txt in Resources */,
 				7FE1FCCF280BDF6A00FFB59A /* s4-text.txt in Resources */,
 				7FE1FCCD280BDF6A00FFB59A /* s2-title.txt in Resources */,
-				7FE1FC9027FF135600FFB59A /* Assets.xcassets in Resources */,
 				7FE1FC8E27FF135300FFB59A /* Main.storyboard in Resources */,
 				7FE1FCD0280BDF6A00FFB59A /* s2-text.txt in Resources */,
 				7FE1FCD1280BDF6A00FFB59A /* s3-title.txt in Resources */,

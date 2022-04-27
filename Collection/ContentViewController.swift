@@ -110,8 +110,13 @@ extension ContentViewController: UICollectionViewDelegateFlowLayout {
             switch data {
             case .gallery(_), .none:
                 return CGSize(width: itemWidth, height: itemWidth * 1.7)
-            case .story(_):
-                return CGSize(width: itemWidth, height: itemWidth * 4.9)
+            case .story(let story):
+                let text = story.text
+                let size = NSString(string: text).boundingRect(with: CGSize(width: itemWidth, height: .greatestFiniteMagnitude),
+                                                               options: [.usesLineFragmentOrigin, .usesFontLeading],
+                                                               attributes: [NSAttributedString.Key.font: UIFont(name: "Rockwell", size: 24)],
+                                                               context: nil).size
+                return size
             }
         }
     }

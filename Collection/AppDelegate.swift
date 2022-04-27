@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController()
         let rootViewController = CollectionViewController()
         navigationController.viewControllers = [rootViewController]
+        navigationController.navigationBar.barTintColor = .clear
         
         window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()

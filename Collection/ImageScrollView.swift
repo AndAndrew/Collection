@@ -1,5 +1,5 @@
 //
-//  DetailImageScrollView.swift
+//  ImageScrollView.swift
 //  Collection
 //
 //  Created by Andrey Krivokhizhin on 19.04.2022.
@@ -7,10 +7,9 @@
 
 import UIKit
 
-class DetailImageScrollView: UIScrollView {
+class ImageScrollView: UIScrollView {
     
     var imageZoomView: UIImageView!
-    var firstTime = true
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -18,9 +17,6 @@ class DetailImageScrollView: UIScrollView {
         delegate = self
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
-        maximumZoomScale = 5
-        minimumZoomScale = 0.2
-        
         decelerationRate = UIScrollView.DecelerationRate.fast
     }
     
@@ -28,27 +24,44 @@ class DetailImageScrollView: UIScrollView {
         super.layoutSubviews()
         
         centerImage()
-        
-        if firstTime {
-            setCurrentZoomScale()
-        }
     }
     
     func set(image: UIImage) {
         
         imageZoomView = UIImageView(image: image)
         addSubview(imageZoomView)
+        
+        configurateFor(imageSize: image.size)
     }
     
-    private func setCurrentZoomScale() {
-        firstTime = !firstTime
+    func configurateFor(imageSize: CGSize) {
+        contentSize = imageSize
+        
+        setCurrentMaxAndMinZoomScale()
+        zoomScale = minimumZoomScale
+    }
+    
+    private func setCurrentMaxAndMinZoomScale() {
         let boundsSize = bounds.size
         let imageSize = imageZoomView.bounds.size
         
         let xScale = boundsSize.width / imageSize.width
         let yScale = boundsSize.height / imageSize.height
-        let currentScale = min(xScale, yScale)
-        zoomScale = currentScale
+        let minScale = min(xScale, yScale)
+        
+        var maxScale: CGFloat = 1.0
+        if minScale < 0.1 {
+            maxScale = 0.3
+        }
+        if minScale >= 0.1 && minScale < 0.5 {
+            maxScale = 0.7
+        }
+        if minScale >= 0.5 {
+            maxScale = max(1.0, minScale)
+        }
+        
+        minimumZoomScale = minScale
+        maximumZoomScale = maxScale
     }
     
     private func centerImage() {
@@ -69,15 +82,14 @@ class DetailImageScrollView: UIScrollView {
         
         imageZoomView.frame = frameToCenter
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
-extension DetailImageScrollView: UIScrollViewDelegate {
+extension ImageScrollView: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        subviews.first
+        imageZoomView
     }
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {

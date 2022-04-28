@@ -9,13 +9,13 @@ import UIKit
 
 class DetailImageViewController: UIViewController {
     
-    let scrollView = DetailImageScrollView()
+    var scrollView = ImageScrollView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .black
-        
+//        scrollView.frame = view.bounds
         setupConstraints()
     }
     

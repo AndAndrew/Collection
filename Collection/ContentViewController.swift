@@ -88,6 +88,7 @@ extension ContentViewController: UICollectionViewDelegate, UICollectionViewDataS
         switch data {
         case .gallery(let gallery):
             let detailImageVC = DetailImageViewController()
+            detailImageVC.scrollView.frame = view.bounds
             detailImageVC.scrollView.set(image: gallery.images[indexPath.item - 1])
             navigationController?.pushViewController(detailImageVC, animated: true)
         case .story(_), .none:
@@ -114,7 +115,7 @@ extension ContentViewController: UICollectionViewDelegateFlowLayout {
                 let text = story.text
                 let size = NSString(string: text).boundingRect(with: CGSize(width: itemWidth, height: .greatestFiniteMagnitude),
                                                                options: [.usesLineFragmentOrigin, .usesFontLeading],
-                                                               attributes: [NSAttributedString.Key.font: UIFont(name: "Rockwell", size: 24)],
+                                                               attributes: [NSAttributedString.Key.font: UIFont(name: "Rockwell", size: 24) ?? UIFont.systemFont(ofSize: 24)],
                                                                context: nil).size
                 return size
             }

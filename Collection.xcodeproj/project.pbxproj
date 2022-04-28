@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7FBB597F280ED7F700004410 /* DetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBB597E280ED7F700004410 /* DetailImageViewController.swift */; };
-		7FBB5981280ED9B000004410 /* DetailImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBB5980280ED9B000004410 /* DetailImageScrollView.swift */; };
+		7FBB5981280ED9B000004410 /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBB5980280ED9B000004410 /* ImageScrollView.swift */; };
 		7FBB59822818232700004410 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1FC8F27FF135600FFB59A /* Assets.xcassets */; };
 		7FE1FC8727FF135300FFB59A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE1FC8627FF135300FFB59A /* AppDelegate.swift */; };
 		7FE1FC8927FF135300FFB59A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE1FC8827FF135300FFB59A /* SceneDelegate.swift */; };
@@ -34,7 +34,7 @@
 
 /* Begin PBXFileReference section */
 		7FBB597E280ED7F700004410 /* DetailImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageViewController.swift; sourceTree = "<group>"; };
-		7FBB5980280ED9B000004410 /* DetailImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageScrollView.swift; sourceTree = "<group>"; };
+		7FBB5980280ED9B000004410 /* ImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
 		7FE1FC8327FF135300FFB59A /* Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FE1FC8627FF135300FFB59A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FE1FC8827FF135300FFB59A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 				7FE1FC8A27FF135300FFB59A /* CollectionViewController.swift */,
 				7FE1FC9A2801951900FFB59A /* ContentViewController.swift */,
 				7FBB597E280ED7F700004410 /* DetailImageViewController.swift */,
-				7FBB5980280ED9B000004410 /* DetailImageScrollView.swift */,
+				7FBB5980280ED9B000004410 /* ImageScrollView.swift */,
 				7FE1FC9C2805A3A800FFB59A /* CollectionCell.swift */,
 				7FE1FCA028081B2C00FFB59A /* HeaderContentVCCell.swift */,
 				7FE1FCA228094EA500FFB59A /* StoryContentVCCell.swift */,
@@ -251,7 +251,7 @@
 				7FE1FC8727FF135300FFB59A /* AppDelegate.swift in Sources */,
 				7FE1FCA328094EA600FFB59A /* StoryContentVCCell.swift in Sources */,
 				7FE1FC8927FF135300FFB59A /* SceneDelegate.swift in Sources */,
-				7FBB5981280ED9B000004410 /* DetailImageScrollView.swift in Sources */,
+				7FBB5981280ED9B000004410 /* ImageScrollView.swift in Sources */,
 				7FE1FC9D2805A3A800FFB59A /* CollectionCell.swift in Sources */,
 				7FE1FCA7280953D900FFB59A /* GalleryContentVCCell.swift in Sources */,
 				7FBB597F280ED7F700004410 /* DetailImageViewController.swift in Sources */,

@@ -36,10 +36,12 @@ enum ContentType {
 struct Data {
     static let data: [ContentType] = [
         .story(Story(coverImage: .init("story-1"), title: .from("s1-title"), text: .from("s1-text"))),
-        .story(Story(coverImage: .init("story-2"), title: .from("s2-title"), text: .from("s2-text"))),
         .gallery(Gallery(coverImage: .init("samara-0"), title: "Samara", images: .init(base: "samara", count: 5))),
+        .story(Story(coverImage: .init("story-3"), title: .from("s3-title"), text: .from("s3-text"))),
+        .story(Story(coverImage: .init("story-2"), title: .from("s2-title"), text: .from("s2-text"))),
+        .gallery(Gallery(coverImage: .init("waterfalls-0"), title: "Waterfalls", images: .init(base: "waterfalls", count: 5))),
         .story(Story(coverImage: .init("story-4"), title: .from("s4-title"), text: .from("s4-text"))),
-        .story(Story(coverImage: .init("story-3"), title: .from("s3-title"), text: .from("s3-text")))
+        .gallery(Gallery(coverImage: .init("winterAltay-0"), title: "Winter Altay", images: .init(base: "winterAltay", count: 4)))
     ]
 }
 
